@@ -4,10 +4,7 @@ class Solution {
         
         int count = 1;
         while(factorial<=n){
-            factorial = 1;
-            for(int i=1; i<=count; i++){
-                factorial *= i;
-            }
+            factorial *= count;
             count++;
         }
         return count-2;
