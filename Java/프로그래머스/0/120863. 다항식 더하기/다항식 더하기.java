@@ -1,37 +1,37 @@
 class Solution {
     public String solution(String polynomial) {
-        String[] arr =polynomial.split(" ");
+        String[] arr = polynomial.split(" ");
         int x = 0;
         int n = 0;
         for(int i=0; i<arr.length; i++){
             if(arr[i].endsWith("x")){
-                String coeff = arr[i].replace("x", "");
-                if (coeff.equals("")) {
+                String str = arr[i].replace("x", "");
+                if (str.equals(""))
                     x++;
-                } else {
-                    x += Integer.parseInt(coeff);
-                }
+                else
+                    x += Integer.parseInt(str);
+                
                 continue;
             }
-            if(arr[i].equals("x")) {
-                x++;
+            if(arr[i].equals("+")) 
                 continue;
-            }
-            if(arr[i].equals("+")) continue;
+            
             n += Integer.parseInt(arr[i]);
         }
-        StringBuilder sb = new StringBuilder();
-        if (x > 0) {
-            sb.append(x == 1 ? "x" : x + "x");
-        }
         
+        StringBuilder sb = new StringBuilder();
+        if (x > 0){
+            if(x == 1) sb.append("x");
+            else sb.append(x+"x");
+        }
         if (n > 0) {
-            if (x > 0) {
+            if (x > 0) 
                 sb.append(" + ");
-            }
             sb.append(n);
         }
-        
-        return sb.length() > 0 ? sb.toString() : "0";
+        if(x > 0 || n > 0) 
+            return sb.toString();
+        else 
+            return "0";
     }
 }
