@@ -29,9 +29,10 @@ class Solution {
                 sb.append(" + ");
             sb.append(n);
         }
-        if(x > 0 || n > 0) 
-            return sb.toString();
-        else 
-            return "0";
+        return sb.toString();
+//         if(x > 0 || n > 0) 
+            
+//         else 
+//             return "0";
     }
 }
