@@ -6,22 +6,14 @@ class Solution {
 
         int[] arr = new int[2];
         for(String str : keyinput){
-            if(str.equals("left")){
-                if(arr[0]-1>=map[3])
+            if(str.equals("left") && arr[0]-1>=map[3])
                     arr[0]--;
-            }
-            else if(str.equals("right")){
-                if(arr[0]+1<=map[1])
+            else if(str.equals("right") && arr[0]+1<=map[1])
                     arr[0]++;
-            }
-            else if(str.equals("up")){
-                if(arr[1]+1<=map[0])
+            else if(str.equals("up") && arr[1]+1<=map[0])
                     arr[1]++;
-            }
-            else{
-                if(arr[1]-1>=map[2])
+            else if(str.equals("down") && arr[1]-1>=map[2])
                     arr[1]--;
-            }
         }
         
         return arr;
