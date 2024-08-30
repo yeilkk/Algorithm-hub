@@ -4,10 +4,12 @@ class Solution {
         String pw = id_pw[1];
         
         for(int i=0; i<db.length; i++){
-            if(id.equals(db[i][0]) && pw.equals(db[i][1]))
-                return "login";
-            if(id.equals(db[i][0]) && !pw.equals(db[i][1]))
-                return "wrong pw";
+            if(id.equals(db[i][0])){
+                if(pw.equals(db[i][1])) 
+                    return "login";
+                else 
+                    return "wrong pw";
+            }
         }
         return "fail";
         
